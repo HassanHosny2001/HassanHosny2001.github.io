@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جدول عبادات العشر الأوائل من ذي الحجة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5efe6;
+    --cream-dark: #ede0cc;
+    --green-dark: #1a4a2e;
+    --green-mid: #2d6a45;
+    --green-light: #4a8c5c;
+    --gold: #c9963a;
+    --gold-light: #e8b96a;
+    --gold-pale: #f0d9a8;
+    --brown: #6b4226;
+    --text-dark: #2c1a0e;
+    --text-mid: #5c3d1e;
+    --shadow: rgba(44, 26, 14, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  @keyframes swing {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,150,58,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(201,150,58,0); }
+  }
+
+  body {
+    background: var(--cream);
+    font-family: 'Noto Naskh Arabic', serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 10% 10%, rgba(201,150,58,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 90% 90%, rgba(26,74,46,0.07) 0%, transparent 60%);
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, var(--green-dark) 0%, #0f2e1c 60%, #1a3d28 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 40px 30px 30px;
+    margin-bottom: 20px;
+    animation: fadeInDown 0.8s ease both;
+    box-shadow: 0 20px 60px rgba(26,74,46,0.35), 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  /* Kaaba image area */
+  .hero-kaaba {
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 100%;
+    overflow: hidden;
+    opacity: 0.18;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kaaba_mirror_edit_jj.jpg/800px-Kaaba_mirror_edit_jj.jpg') center/cover no-repeat;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 100%);
+  }
+
+  /* Mosque silhouette SVG */
+  .hero-skyline {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    opacity: 0.15;
+  }
+
+  .lantern {
+    position: absolute;
+    top: 0;
+    animation: swing 4s ease-in-out infinite;
+    transform-origin: top center;
+    font-size: 36px;
+    opacity: 0.85;
+  }
+  .lantern-r { right: 220px; }
+  .lantern-l { left: 30px; animation-delay: -2s; font-size: 28px; top: 5px; }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-family: 'Amiri', serif;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .hero-title {
+    font-family: 'Amiri', serif;
+    font-size: 4rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    display: block;
+    font-size: 3rem;
+  }
+
+  .hero-tagline {
+    color: var(--gold-pale);
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+
+  .ornament {
+    color: var(--gold);
+    font-size: 1.4rem;
+    letter-spacing: 6px;
+    margin: 8px 0;
+    display: block;
+  }
+
+  /* ===== HADITH BOX ===== */
+  .hadith-box {
+    background: linear-gradient(135deg, #fdf6ec, #f5e9d0);
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeInUp 0.8s 0.2s ease both;
+    box-shadow: 0 4px 20px rgba(201,150,58,0.15), inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+
+  .hadith-box::before {
+    content: '❝';
+    position: absolute;
+    top: -14px;
+    right: 24px;
+    background: var(--gold);
+    color: #fff;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .hadith-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--text-dark);
+    text-align: right;
+  }
+
+  .hadith-source {
+    text-align: left;
+    color: var(--green-mid);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* ===== PRINT/SAVE BUTTON ===== */
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s 0.3s ease both;
+  }
+
+  .btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(26,74,46,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26,74,46,0.4);
+  }
+  .btn-secondary {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(201,150,58,0.25);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    animation: pulse-gold 1s ease;
+  }
+
+  /* ===== TABLE ===== */
+  .table-wrapper {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px var(--shadow);
+    animation: fadeInUp 0.8s 0.4s ease both;
+    border: 1px solid var(--cream-dark);
+  }
+
+  .table-header-bar {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .table-header-title {
+    color: #fff;
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+  }
+
+  .days-header {
+    display: flex;
+    gap: 4px;
+  }
+
+  .day-badge {
+    background: rgba(255,255,255,0.15);
+    color: var(--gold-light);
+    border-radius: 6px;
+    width: 34px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    direction: rtl;
+  }
+
+  thead tr {
+    background: linear-gradient(to bottom, #f9f3e8, #f2e8d4);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  thead th {
+    padding: 10px 6px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--green-dark);
+    font-weight: 700;
+    border-left: 1px solid var(--cream-dark);
+  }
+
+  thead th:first-child {
+    text-align: right;
+    padding-right: 16px;
+    width: 200px;
+    background: linear-gradient(to right, #e8ddc8, #f2e8d4);
+    font-size: 1rem;
+    color: var(--green-dark);
+  }
+
+  /* Category rows */
+  .cat-row td {
+    background: linear-gradient(to left, #e8f2ec, #d4eade);
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-bottom: 1px solid #b8d9c4;
+    letter-spacing: 0.5px;
+  }
+  .cat-row td::before {
+    content: '◆ ';
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  tbody tr {
+    transition: background 0.2s;
+    border-bottom: 1px solid #f0e8d8;
+  }
+
+  tbody tr:hover {
+    background: rgba(201,150,58,0.06);
+  }
+
+  .row-label {
+    padding: 9px 16px 9px 8px;
+    text-align: right;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .row-icon {
+    font-size: 1.1rem;
+    min-width: 22px;
+    text-align: center;
+  }
+
+  td.day-cell {
+    width: 42px;
+    text-align: center;
+    border-left: 1px solid #f0e8d8;
+    padding: 6px;
+  }
+
+  .check-box {
+    width: 28px; height: 28px;
+    border: 2px solid var(--cream-dark);
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    background: #fff;
+    font-size: 0;
+  }
+
+  .check-box:hover {
+    border-color: var(--gold);
+    background: #fdf6ec;
+    transform: scale(1.1);
+  }
+
+  .check-box.checked {
+    background: linear-gradient(135deg, var(--green-light), var(--green-mid));
+    border-color: var(--green-dark);
+    font-size: 0.9rem;
+    color: #fff;
+    animation: pulse-gold 0.3s ease;
+  }
+
+  /* Progress bar row */
+  .progress-row td {
+    padding: 0;
+  }
+
+  .progress-bar-container {
+    height: 6px;
+    background: #f0e8d8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to left, var(--gold-light), var(--green-light));
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+
+  /* ===== SUMMARY ===== */
+  .summary-bar {
+    background: linear-gradient(135deg, var(--green-dark), #0f2e1c);
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s 0.5s ease both;
+    box-shadow: 0 4px 20px rgba(26,74,46,0.25);
+  }
+
+  .summary-stat {
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .stat-number {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    color: var(--gold-pale);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-quote {
+    text-align: center;
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--gold-pale), #f5e9d0);
+    border-radius: 12px;
+    font-family: 'Amiri', serif;
+    font-size: 1.05rem;
+    color: var(--green-dark);
+    border: 1px solid var(--gold);
+    animation: fadeInUp 0.8s 0.6s ease both;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: white; }
+    .actions { display: none; }
+    .hero { box-shadow: none; }
+    .table-wrapper { box-shadow: none; }
+    .check-box.checked { background: var(--green-mid) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ===== TOOLTIP for day number ===== */
+  thead th.day-th {
+    position: relative;
+  }
+
+  thead th.day-th::after {
+    content: attr(data-day);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-kaaba"></div>
+    <div class="lantern lantern-r">🪔</div>
+    <div class="lantern lantern-l">🏮</div>
+
+    <svg class="hero-skyline" viewBox="0 0 900 60" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="40" width="900" height="20"/>
+      <rect x="30" y="25" width="30" height="35"/><polygon points="45,10 30,25 60,25"/>
+      <rect x="33" y="10" width="4" height="15"/><rect x="43" y="10" width="4" height="15"/>
+      <rect x="80" y="30" width="20" height="30"/><polygon points="90,18 80,30 100,30"/>
+      <rect x="120" y="20" width="40" height="40"/><polygon points="140,5 120,20 160,20"/>
+      <rect x="125" y="5" width="5" height="16"/><rect x="138" y="5" width="5" height="16"/>
+      <rect x="180" y="32" width="18" height="28"/><polygon points="189,20 180,32 198,32"/>
+      <rect x="220" y="22" width="35" height="38"/><polygon points="237,8 220,22 255,22"/>
+      <rect x="224" y="8" width="5" height="15"/><rect x="236" y="8" width="5" height="15"/>
+      <rect x="280" y="28" width="25" height="32"/><polygon points="292,15 280,28 305,28"/>
+      <rect x="330" y="18" width="45" height="42"/><polygon points="352,3 330,18 375,18"/>
+      <rect x="336" y="3" width="6" height="16"/><rect x="350" y="3" width="6" height="16"/>
+      <rect x="400" y="30" width="22" height="30"/><polygon points="411,18 400,30 422,30"/>
+      <rect x="450" y="20" width="38" height="40"/><polygon points="469,6 450,20 488,20"/>
+      <rect x="454" y="6" width="5" height="15"/><rect x="469" y="6" width="5" height="15"/>
+      <rect x="510" y="25" width="28" height="35"/><polygon points="524,13 510,25 538,25"/>
+      <rect x="560" y="15" width="50" height="45"/><polygon points="585,0 560,15 610,15"/>
+      <rect x="565" y="0" width="7" height="17"/><rect x="582" y="0" width="7" height="17"/>
+      <rect x="640" y="28" width="22" height="32"/><polygon points="651,16 640,28 662,28"/>
+      <rect x="690" y="22" width="36" height="38"/><polygon points="708,8 690,22 726,22"/>
+      <rect x="694" y="8" width="5" height="15"/><rect x="707" y="8" width="5" height="15"/>
+      <rect x="760" y="30" width="20" height="30"/><polygon points="770,18 760,30 780,30"/>
+      <rect x="810" y="20" width="42" height="40"/><polygon points="831,5 810,20 852,20"/>
+      <rect x="815" y="5" width="6" height="16"/><rect x="829" y="6" width="6" height="15"/>
+      <rect x="870" y="28" width="25" height="32"/><polygon points="882,16 870,28 895,28"/>
+    </svg>
+
+    <div class="hero-content">
+      <div class="hero-subtitle">✦ اغتنم ✦</div>
+      <h1 class="hero-title">
+        ذي الحجة
+        <span>العشر الأوائل</span>
+      </h1>
+      <span class="ornament">﷽</span>
+      <p class="hero-tagline">أحب الأيام إلى الله • تتبع عباداتك اليومية</p>
+    </div>
+  </div>
+
+  <!-- HADITH -->
+  <div class="hadith-box">
+    <p class="hadith-text">
+      قال رسول الله ﷺ: «ما من أيام العمل الصالح فيها أحبّ إلى الله من هذه الأيام»، قالوا: ولا الجهاد في سبيل الله؟
+      قال: «ولا الجهاد في سبيل الله، إلا رجلٌ خرج بنفسه وماله، ثم لم يرجع من ذلك بشيء»
+    </p>
+    <p class="hadith-source">رواه البخاري</p>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button class="btn btn-primary" onclick="window.print()">🖨️ طباعة</button>
+    <button class="btn btn-secondary" onclick="resetAll()">🔄 إعادة تعيين</button>
+    <button class="btn btn-primary" onclick="exportProgress()">💾 حفظ التقدم</button>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div style="margin-bottom:16px; animation: fadeInUp 0.8s 0.35s ease both;">
+    <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.85rem; color:var(--green-dark); font-weight:600;">
+      <span>📊 إجمالي التقدم</span>
+      <span id="progress-text">0%</span>
+    </div>
+    <div style="height:12px; background:#f0e8d8; border-radius:50px; overflow:hidden; border:1px solid var(--cream-dark);">
+      <div id="main-progress" style="height:100%; background:linear-gradient(to left, var(--gold), var(--green-mid)); border-radius:50px; transition:width 0.5s ease; width:0%;"></div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrapper">
+    <div class="table-header-bar">
+      <span class="table-header-title">🕌 جدول العبادات</span>
+      <div class="days-header">
+        <div class="day-badge">١</div>
+        <div class="day-badge">٢</div>
+        <div class="day-badge">٣</div>
+        <div class="day-badge">٤</div>
+        <div class="day-badge">٥</div>
+        <div class="day-badge">٦</div>
+        <div class="day-badge">٧</div>
+        <div class="day-badge">٨</div>
+        <div class="day-badge">٩</div>
+        <div class="day-badge">١٠</div>
+      </div>
+    </div>
+
+    <table id="tracker-table">
+      <thead>
+        <tr>
+          <th>العبادة</th>
+          <th class="day-th">١</th>
+          <th class="day-th">٢</th>
+          <th class="day-th">٣</th>
+          <th class="day-th">٤</th>
+          <th class="day-th">٥</th>
+          <th class="day-th">٦</th>
+          <th class="day-th">٧</th>
+          <th class="day-th">٨</th>
+          <th class="day-th">٩</th>
+          <th class="day-th">١٠</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-bar">
+    <div class="summary-stat">
+      <span class="stat-number" id="stat-done">0</span>
+      <span class="stat-label">✅ تم إنجازها</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="summary-stat">
+      <span class="stat-number" id="stat-remaining">0</span>
+      <span class="stat-label">⏳ متبقي</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="summary-stat">
+      <span class="stat-number" id="stat-streak">0</span>
+      <span class="stat-label">🔥 أيام متتالية</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="summary-stat">
+      <span class="stat-number" id="stat-best">0</span>
+      <span class="stat-label">⭐ أفضل يوم</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-quote">
+    🌸 وإنها لبدايات عظيمة، قد تبدأها بالتكلف حتى تصير صداق حالك وبالك 🌸
+  </div>
+
+</div>
+
+<script>
+const rows = [
+  { cat: '🌅 الصلوات' },
+  { id: 'fajr',    label: 'صلاة الفجر',            icon: '🕌' },
+  { id: 'adhkar1', label: 'أذكار ما بعد الفجر',     icon: '📿' },
+  { id: 'morning', label: 'أذكار الصباح',            icon: '🌄' },
+  { id: 'duha',    label: 'صلاة الضحى',             icon: '☀️' },
+  { id: 'dhuhr',   label: 'صلاة الظهر',             icon: '🕌' },
+  { id: 'adhkar2', label: 'أذكار ما بعد الظهر',     icon: '📿' },
+  { id: 'asr',     label: 'صلاة العصر',             icon: '🕌' },
+  { id: 'adhkar3', label: 'أذكار ما بعد العصر',     icon: '📿' },
+  { id: 'evening', label: 'أذكار المساء',            icon: '🌙' },
+  { id: 'maghrib', label: 'صلاة المغرب',            icon: '🕌' },
+  { id: 'adhkar4', label: 'أذكار ما بعد المغرب',    icon: '📿' },
+  { id: 'isha',    label: 'صلاة العشاء',             icon: '🌛' },
+  { id: 'adhkar5', label: 'أذكار ما بعد العشاء',    icon: '📿' },
+  { cat: '📖 القرآن والذكر' },
+  { id: 'quran',   label: 'الورد القرآني',           icon: '📖' },
+  { id: 'sunnah',  label: 'السنن الرواتب (١٢ ركعة)', icon: '🕋' },
+  { id: 'takbeer', label: 'التكبير والتهليل والتحميد',icon: '🤲' },
+  { id: 'salah100',label: '١٠٠ صلاة على النبي ﷺ',   icon: '💚' },
+  { id: 'istigh',  label: '١٠٠ استغفار',             icon: '🌿' },
+  { cat: '🌙 العبادات الأخرى' },
+  { id: 'siyam',   label: 'الصيام',                  icon: '🌙' },
+  { id: 'mulk',    label: 'سورة الملك قبل النوم',    icon: '📜' },
+  { id: 'sleep',   label: 'أذكار النوم',              icon: '💤' },
+];
+
+let state = {};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('dhul-hijja-2024');
+    if (saved) state = JSON.parse(saved);
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('dhul-hijja-2024', JSON.stringify(state));
+  } catch(e) {}
+}
+
+function buildTable() {
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  rows.forEach(row => {
+    if (row.cat) {
+      const tr = document.createElement('tr');
+      tr.className = 'cat-row';
+      tr.innerHTML = `<td colspan="11">${row.cat}</td>`;
+      tbody.appendChild(tr);
+    } else {
+      const tr = document.createElement('tr');
+      let tds = `<td><div class="row-label"><span class="row-icon">${row.icon}</span>${row.label}</div></td>`;
+      for (let d = 1; d <= 10; d++) {
+        const key = `${row.id}-${d}`;
+        const checked = state[key] ? ' checked' : '';
+        tds += `<td class="day-cell"><div class="check-box${checked}" onclick="toggle('${key}', this)">${state[key] ? '✓' : ''}</div></td>`;
+      }
+      tr.innerHTML = tds;
+      tbody.appendChild(tr);
+    }
+  });
+}
+
+function toggle(key, el) {
+  state[key] = !state[key];
+  if (state[key]) {
+    el.classList.add('checked');
+    el.textContent = '✓';
+  } else {
+    el.classList.remove('checked');
+    el.textContent = '';
+  }
+  saveState();
+  updateStats();
+}
+
+function updateStats() {
+  const totalCells = rows.filter(r => r.id).length * 10;
+  const done = Object.values(state).filter(Boolean).length;
+  const pct = Math.round((done / totalCells) * 100);
+
+  document.getElementById('stat-done').textContent = done;
+  document.getElementById('stat-remaining').textContent = totalCells - done;
+  document.getElementById('progress-text').textContent = pct + '%';
+  document.getElementById('main-progress').style.width = pct + '%';
+
+  // Best day
+  let best = 0, bestDay = 0;
+  for (let d = 1; d <= 10; d++) {
+    const count = rows.filter(r => r.id && state[`${r.id}-${d}`]).length;
+    if (count > best) { best = count; bestDay = d; }
+  }
+  document.getElementById('stat-best').textContent = bestDay ? `يوم ${toArabicNum(bestDay)}` : '–';
+
+  // Streak (consecutive complete days)
+  const totalPerDay = rows.filter(r => r.id).length;
+  let streak = 0;
+  for (let d = 1; d <= 10; d++) {
+    const count = rows.filter(r => r.id && state[`${r.id}-${d}`]).length;
+    if (count === totalPerDay) streak++;
+    else streak = 0;
+  }
+  document.getElementById('stat-streak').textContent = streak;
+}
+
+function toArabicNum(n) {
+  const ar = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+  return String(n).replace(/\d/g, d => ar[d]);
+}
+
+function resetAll() {
+  if (confirm('هل تريد إعادة تعيين كل البيانات؟')) {
+    state = {};
+    saveState();
+    buildTable();
+    updateStats();
+  }
+}
+
+function exportProgress() {
+  const data = JSON.stringify(state, null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'dhul-hijja-progress.json';
+  a.click();
+}
+
+loadState();
+buildTable();
+updateStats();
+</script>
+
+</body>
+</html>
